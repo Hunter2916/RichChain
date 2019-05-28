@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion 28
+  buildToolsVersion '28.0.3'
+  resourcePrefix 'ms__'
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 25
+  }
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:support-annotations:28.0.0'
+}
+
+//apply from: rootProject.file('gradle/maven-push.gradle')

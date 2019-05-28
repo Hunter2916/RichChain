@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <!--<stroke-->
+            <!--android:width="0.5dp"-->
+            <!--android:color="#9d9d9d" />&lt;!&ndash;边框颜色&ndash;&gt;-->
+            <!--<solid android:color="@color/color_3e71d1" />&lt;!&ndash;填充色&ndash;&gt;-->
+            <corners android:radius="10dp" />
+            <gradient
+                android:angle="180"
+                android:endColor="#dc4848"
+                android:startColor="#fd9b97" />
+            <!--android:endColor="#0b508e"-->
+            <!--android:startColor="#1599d6" />-->
+        </shape>
+    </item>
+</layer-list>

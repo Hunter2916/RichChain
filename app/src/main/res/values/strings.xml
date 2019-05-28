@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">区块链</string>
+    <string name="my_terminal_details_1">运&#8194;营&#8194;商:</string>
+    <string name="my_terminal_details_2">手&#8194;机&#8194;号:</string>
+    <string name="replenish_manage_1">库&#8194;&#8194;&#8194;&#8194;存:</string>
+    <string name="replenish_manage_2">容&#8194;&#8194;&#8194;&#8194;量:</string>
+    <string name="commodity_manage_type">类&#8194;&#8194;&#8194;&#8194;型:</string>
+    <string name="perfer_details">已&#8194;优&#8194;惠:</string>
+    <string name="perfer_type">优&#8194;惠&#8194;率</string>
+    <string name="aisle_management_1">时&#8194;&#8194;&#8194;&#8194;间:</string>
+    <string name="aisle_management_2">货&#8194;&#8194;&#8194;&#8194;道:</string>
+    <string name="abnormal_orders_name">名&#8194;&#8194;&#8194;&#8194;称:</string>
+    <string name="abnormal_orders_money">金&#8194;&#8194;&#8194;&#8194;额:</string>
+
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">松开后刷新</string>
+    <string name="pull_to_refresh_footer_release_label">松开后加载</string>
+    <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+    <string name="pull_to_refresh_refreshing_label">刷新中\u2026</string>
+
+    <string name="close">关闭</string>
+    <string name="complete">完成</string>
+    <!--<string name="withdrawal_rules"> 1、每笔提现金额最低额度为500元\n2、剩余金额每满100元可递增提取\n3、提取金额金额必须是100的整数倍</string>-->
+    <string name="withdrawal_rules">  每笔提现金额最低额度为500元</string>
+    <string name="title_activity_wallet_log">WalletLogActivity</string>
+    <string name="title_activity_mine_recommend">MineRecommendActivity</string>
+    <string name="title_activity_home_fragment_notification_bar">
+        HomeFragmentNotificationBarActivity
+    </string>
+    <string name="title_activity_register">Register</string>
+    <string name="recommend_rule">&#12288;&#12288;杭州腾晖智能科技有限公司成立于2016年，总部位于浙江杭州海创园。是全国领先的智能软硬件行业解决方案提供商之一。 公司主要从事互联网技术开发；智能硬件服务、智能软件服务、智慧云平台服务、智能软硬件行业解决方案服务等。 公司以智慧终端－－“酷么”智能自动售货机作为载体，构建全国性的智能化零售终端网络服务消费人群。以“智能媒体”服务全国知名企业，以“智慧云服务平台”智慧开发来构建智能生态系统运作。 杭州腾晖智能科技有限公司主要产品有：酷么智能售卖机 、酷优生活消费平台、“好+居”智能家居云服务平台等。 浙江杭州未来科技城（海创园）入园企业 、浙江杭州市余杭区政府重点扶持项目、2016年已成功在浙江省股权交易中心创新板挂牌（代码850086）证明材料来自“杭州市余杭区政府信息公开网”</string>
+    <string name="recommend_agreement">1、用手机就可以完成酷么智能售货机/便利店内商品的购买\n2、通过任务、活动、优惠等多种途径,给用户提供多种代金券\n3、扫描商品二维码,就能快速进行商品购买\n4、为商家和售卖机主提供管理平台和让利系统\n5、消费者和商家在手机APP上能够每日查看得到的消费奖励</string>
+    <string name="meal_detail">套餐一\n&#12288;&#12288;杭州，简称“杭”，浙江省省会，位于中国东南沿海、浙江省北部、钱塘江下游、京杭大运河南端，副省级市，是浙江省的政治、经济、文化、教育、交通和金融中心。\n\n套餐二\n&#12288;&#12288;杭州自秦朝设县治以来已有2200多年的历史，曾是吴越国和南宋的都城。因风景秀丽，素有“人间天堂”的美誉。杭州得益于京杭运河和通商口岸的便利，以及自身发达的丝绸和粮食产业，历史上曾是重要的商业集散中心。\n\n套餐三\n&#12288;&#12288;杭州人文古迹众多，西湖及其周边有大量的自然及人文景观遗迹。其中主要具代表性的有西湖文化、良渚文化、丝绸文化、茶文化，以及流传下来的许多故事传说成为杭州文化代表。2018年世界短池游泳锦标赛、2022年亚洲运动会将在杭州举办。</string>
+    <string name="title_activity_notification_detail_show">NotificationDetailShowActivity</string>
+    <string name="title_activity_mine_point_location">MinePointLocationActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">我是团队推广</string>
+
+    <string name="filter_vcode">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><!--微信-->
+<layout >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context="com.maijia.rc.activity.exechangeset.WeChatActivity">
+
+        <include
+            android:id="@+id/titlebar"
+            layout="@layout/layout_title_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_length_dp_15"
+                android:layout_marginRight="@dimen/activity_length_dp_15"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/activity_length_dp_8"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="微信:"
+                        android:textSize="@dimen/activity_word_sp_16" />
+
+                    <EditText
+                        android:id="@+id/id_card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@null"
+                        android:hint="请输入微信账号"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:paddingLeft="3dp"
+                        android:textColor="@color/home_text"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <include layout="@layout/view_line_height" />
+
+
+                <Button
+                    android:id="@+id/commit"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="55dp"
+                    android:background="@drawable/bt_shape_blue_corners_bg"
+                    android:text="确认"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/activity_word_sp_22" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

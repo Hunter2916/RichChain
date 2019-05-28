@@ -1,0 +1,59 @@
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_line"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context="com.maijia.rc.fragment.TradeCenterFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_length_dp_18"
+            android:background="@color/blue_bg" />
+
+        <include
+            android:id="@+id/titlebar"
+            layout="@layout/layout_title_bar" />
+
+        <com.maijia.rc.view.PullToRefreshView
+            android:id="@+id/pull_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.maijia.rc.view.InnerScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/activity_length_dp_8"
+                    android:layout_marginRight="@dimen/activity_length_dp_8"
+                    android:orientation="vertical">
+
+                    <com.maijia.rc.view.ListViewForScrollView
+                        android:id="@+id/listView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="55dp"
+                        android:background="@color/white"
+                        android:descendantFocusability="beforeDescendants"
+                        android:divider="@null"
+                        android:dividerHeight="@dimen/activity_length_dp_0"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" />
+                </RelativeLayout>
+
+            </com.maijia.rc.view.InnerScrollView>
+        </com.maijia.rc.view.PullToRefreshView>
+
+
+    </LinearLayout>
+</layout>

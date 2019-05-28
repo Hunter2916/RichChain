@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_length_dp_50"
+        android:background="@color/blue_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/title_bg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_length_dp_10"
+                android:padding="@dimen/activity_length_dp_5"
+                android:src="@mipmap/ic_return" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/title_color"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/plugin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/activity_length_dp_15"
+                android:padding="@dimen/activity_length_dp_5"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/activity_length_dp_14"
+                android:padding="@dimen/activity_length_dp_5"
+                android:text="完成"
+                android:textColor="@color/white"
+                android:textSize="@dimen/activity_word_sp_16"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

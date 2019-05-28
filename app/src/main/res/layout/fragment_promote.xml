@@ -1,0 +1,80 @@
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_line"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context="com.maijia.rc.fragment.PromoteFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:text="请选择A区、B区："
+            android:textColor="@color/home_text"
+            android:textSize="18sp" />
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="95dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="@dimen/activity_length_dp_8"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal">-->
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/bt_A"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bt_team"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="A"
+                android:textSize="26sp" />
+
+            <RadioButton
+                android:id="@+id/bt_B"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bt_team"
+                android:button="@null"
+                android:gravity="center"
+                android:text="B"
+                android:textSize="26sp" />
+        </RadioGroup>
+
+        <!--</LinearLayout>-->
+
+        <Button
+            android:id="@+id/alter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_length_dp_45"
+            android:layout_marginLeft="@dimen/activity_length_dp_45"
+            android:layout_marginRight="@dimen/activity_length_dp_45"
+            android:layout_marginTop="@dimen/activity_length_dp_60"
+            android:background="@drawable/bt_shape_blue_corners_bg"
+            android:text="下一步"
+            android:textColor="@color/white"
+            android:textSize="@dimen/activity_word_sp_18" />
+    </LinearLayout>
+</layout>

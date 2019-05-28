@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_line"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context="com.maijia.rc.activity.MineInformationActivity">
+
+        <include
+            android:id="@+id/titlebar"
+            layout="@layout/layout_title_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <com.maijia.rc.view.ShapeImageView
+                android:id="@+id/portrait"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="45dp"
+                android:focusable="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/logo_101"
+                app:border_colors="@color/white"
+                app:border_size="@dimen/activity_length_dp_2"
+                app:shape="circle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="上传照片"
+                android:textColor="@color/home_text"
+                android:textSize="16sp" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bt_circle_white_gradient_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <EditText
+                    android:id="@+id/nick_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="昵称"
+                    android:textColor="@color/home_text"
+                    android:textColorHint="@color/home_text"
+                    android:textSize="@dimen/activity_word_sp_15" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sex"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bt_circle_white_gradient_bg"
+                android:gravity="center_vertical"
+                android:padding="1dp"
+                android:orientation="horizontal">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:scrollbars="none"
+
+                    android:textColor="@color/home_text"
+                    android:textColorHint="@color/home_text"
+                    android:textSize="@dimen/activity_word_sp_15" />
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:src="@mipmap/ic_arrow" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bt_circle_white_gradient_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <EditText
+                    android:id="@+id/personal_signature"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="个性签名"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/home_text"
+                    android:textColorHint="@color/home_text"
+                    android:textSize="@dimen/activity_word_sp_15" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/exit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_length_dp_45"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_length_dp_45"
+                android:layout_marginRight="@dimen/activity_length_dp_45"
+                android:layout_marginTop="@dimen/activity_length_dp_30"
+                android:background="@drawable/bt_shape_blue_corners_bg"
+                android:text="确认修改"
+                android:textColor="@color/white"
+                android:textSize="@dimen/activity_word_sp_18" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

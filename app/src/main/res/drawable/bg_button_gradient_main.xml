@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="@dimen/activity_length_dp_3">
+
+        <shape android:shape="rectangle">
+            <!--<stroke-->
+            <!--android:width="0.5dp"-->
+            <!--android:color="#9d9d9d" />&lt;!&ndash;边框颜色&ndash;&gt;-->
+            <solid android:color="@color/gray" /><!--填充色-->
+            <corners android:radius="5dp" />
+            <!--<gradient-->
+            <!--android:angle="180"-->
+            <!--android:endColor="#ff9e6f"-->
+            <!--android:startColor="#ff6568" />-->
+            <!--android:endColor="#0b508e"-->
+            <!--android:startColor="#1599d6" />-->
+        </shape>
+    </item>
+    <!--<item android:bottom="@dimen/activity_length_dp_3">-->
+
+        <!--<shape android:shape="rectangle">-->
+            <!--&lt;!&ndash;<stroke&ndash;&gt;-->
+            <!--&lt;!&ndash;android:width="0.5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:color="#9d9d9d" />&lt;!&ndash;边框颜色&ndash;&gt;&ndash;&gt;-->
+            <!--<solid android:color="@color/gray" />&lt;!&ndash;填充色&ndash;&gt;-->
+            <!--<corners android:radius="5dp" />-->
+            <!--&lt;!&ndash;<gradient&ndash;&gt;-->
+            <!--&lt;!&ndash;android:angle="180"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:endColor="#ff9e6f"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:startColor="#ff6568" />&ndash;&gt;-->
+            <!--&lt;!&ndash;android:endColor="#0b508e"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:startColor="#1599d6" />&ndash;&gt;-->
+        <!--</shape>-->
+    <!--</item>-->
+</layer-list>
