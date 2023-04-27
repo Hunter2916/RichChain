@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivitySettingBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class SettingActivity extends BaseActivity {
     ActivitySettingBinding binding;
@@ -24,7 +21,6 @@ public class SettingActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         setStatusBarColor();
         binding.titlebar.title.setText("设置");
-        initInject();
         initClick();
     }
 
@@ -37,15 +33,6 @@ public class SettingActivity extends BaseActivity {
         binding.changeTradePassword.setOnClickListener(this);
         binding.forgetTradePsd.setOnClickListener(this);
         binding.aboutUs.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

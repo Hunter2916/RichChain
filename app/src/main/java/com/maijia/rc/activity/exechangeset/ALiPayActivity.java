@@ -10,9 +10,6 @@ import com.maijia.rc.R;
 import com.maijia.rc.activity.ActivityStack;
 import com.maijia.rc.activity.BaseActivity;
 import com.maijia.rc.databinding.ActivityAliPayBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class ALiPayActivity extends BaseActivity {
     ActivityAliPayBinding binding;
@@ -24,21 +21,11 @@ public class ALiPayActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         binding.titlebar.title.setText("添加支付宝");
         setStatusBarColor();
-        initInject();
         initClick();
     }
 
     private void initClick() {
         binding.titlebar.back.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

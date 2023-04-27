@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityMillBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class MillActivity extends BaseActivity {
     ActivityMillBinding binding;
@@ -22,21 +19,11 @@ public class MillActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         setStatusBarColor();
         binding.titlebar.title.setText("矿机详情");
-        initInject();
         initClick();
     }
 
     private void initClick() {
         binding.titlebar.back.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

@@ -9,9 +9,6 @@ import android.view.View;
 import com.maijia.domain.model.MillStoreData;
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityBuyMillDetailBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class BuyMillDetailActivity extends BaseActivity {
     private Context context;
@@ -29,7 +26,6 @@ public class BuyMillDetailActivity extends BaseActivity {
         Intent intent = getIntent();
         data = (MillStoreData) intent.getSerializableExtra("data");
         initClick();
-        initInject();
         initView();
     }
 
@@ -39,14 +35,6 @@ public class BuyMillDetailActivity extends BaseActivity {
         }
     }
 
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
-    }
 
     private void initClick() {
         binding.titlebar.back.setOnClickListener(this);

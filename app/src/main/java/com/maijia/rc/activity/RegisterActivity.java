@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityRegisterBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class RegisterActivity extends BaseActivity {
     ActivityRegisterBinding binding;
@@ -23,7 +20,6 @@ public class RegisterActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
         setStatusBarColor();
         binding.titlebar.title.setText("注册");
-        initInject();
         initClick();
     }
 
@@ -31,14 +27,6 @@ public class RegisterActivity extends BaseActivity {
         binding.titlebar.back.setOnClickListener(this);
     }
 
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
-    }
 
     @Override
     public void onClick(View v) {

@@ -14,9 +14,6 @@ import com.maijia.rc.activity.exechangeset.C2IdentificationActivity;
 import com.maijia.rc.activity.exechangeset.OtherPayStyleActivity;
 import com.maijia.rc.activity.exechangeset.WeChatActivity;
 import com.maijia.rc.databinding.ActivityExechangeSettingBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 /**
  * 兑换设置
@@ -33,7 +30,6 @@ public class ExechangeSettingActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         setStatusBarColor();
         binding.titlebar.title.setText("兑换设置");
-        initInject();
         initClick();
     }
 
@@ -51,15 +47,6 @@ public class ExechangeSettingActivity extends BaseActivity {
         binding.llBankCard.setOnClickListener(this);
         //其他支付方式
         binding.llOtherPay.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

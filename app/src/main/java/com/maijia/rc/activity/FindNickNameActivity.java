@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityFindNickNameBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 /**
  * 查找用户名
@@ -27,7 +24,6 @@ public class FindNickNameActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_find_nick_name);
         binding.titlebar.title.setText("找回用户名");
         setStatusBarColor();
-        initInject();
         initClick();
     }
 
@@ -35,15 +31,6 @@ public class FindNickNameActivity extends BaseActivity {
         binding.titlebar.back.setOnClickListener(this);
         binding.next.setOnClickListener(this);
 
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

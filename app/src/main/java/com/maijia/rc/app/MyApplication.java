@@ -5,10 +5,6 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
-import com.maijia.rc.di.component.ApplicationComponent;
-import com.maijia.rc.di.component.DaggerApplicationComponent;
-import com.maijia.rc.di.module.ApplicationModule;
-
 import org.xutils.x;
 
 
@@ -17,14 +13,12 @@ import org.xutils.x;
  * Desription
  */
 public class MyApplication extends MultiDexApplication {
-    private ApplicationComponent applicationComponent;
     public static Context mContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
         mContext = this;
-        initInject();
         //初始化bugly
 //        CrashReport.initCrashReport(getApplicationContext(), "59ea13e280", false);
 //        Bugly.init(getApplicationContext(), "59ea13e280", false);
@@ -43,24 +37,5 @@ public class MyApplication extends MultiDexApplication {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
-    }
-
-    /**
-     * 创建一个实例
-     */
-    private void initInject() {
-        applicationComponent = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this))
-                .build();
-    }
-
-    /**
-     * 自定义一个Application类,用它来提供BaseComponent实例,因为在整个App生命周期内都只有一个Application
-     * 实例,所以其中的BaseComponent实例也不会变.我们自定义一个MyApplication类
-     *
-     * @return
-     */
-    public ApplicationComponent getApplicationComponent() {
-        return applicationComponent;
     }
 }

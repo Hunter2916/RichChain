@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 import com.maijia.rc.R;
 import com.maijia.rc.app.MyApplication;
-import com.maijia.rc.di.component.ApplicationComponent;
-import com.maijia.rc.di.module.ActivityModule;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 /**
@@ -25,15 +23,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getApplicationComponent().inject(this);
-    }
-
-    protected ApplicationComponent getApplicationComponent() {
-        return ((MyApplication) getApplication()).getApplicationComponent();
-    }
-
-    protected ActivityModule getActivityModule() {
-        return new ActivityModule(this);
     }
 
     //显示短的提示

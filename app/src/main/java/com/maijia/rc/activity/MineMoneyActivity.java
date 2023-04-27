@@ -9,9 +9,6 @@ import android.view.View;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityMineMoneyBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 import com.maijia.rc.dialog.DialogManager;
 import com.maijia.rc.listener.OnDialogClickListener;
 import com.maijia.rc.utils.DateUtil;
@@ -32,7 +29,6 @@ public class MineMoneyActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         dialogManager = new DialogManager();
         setStatusBarColor();
-        initInject();
         initClick();
         binding.time.setText("今天是" + DateUtil.getDateTimeYeartoChinese(System.currentTimeMillis()));
         setMineMoneyTextColor();
@@ -70,15 +66,6 @@ public class MineMoneyActivity extends BaseActivity {
         binding.tvKjpTrade.setOnClickListener(this);
         binding.tvKjpDetail.setOnClickListener(this);
 
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

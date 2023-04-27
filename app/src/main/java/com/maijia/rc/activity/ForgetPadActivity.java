@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityForgetPadBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class ForgetPadActivity extends BaseActivity {
     ActivityForgetPadBinding binding;
@@ -22,21 +19,11 @@ public class ForgetPadActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_forget_pad);
         setStatusBarColor();
         binding.titlebar.title.setText("找回密码");
-        initInject();
         initClick();
     }
 
     private void initClick() {
         binding.titlebar.back.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

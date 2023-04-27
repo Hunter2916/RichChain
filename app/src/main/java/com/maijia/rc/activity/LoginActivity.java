@@ -12,9 +12,6 @@ import android.widget.ArrayAdapter;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityLoginBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,7 +34,6 @@ public class LoginActivity extends BaseActivity {
 //        binding.loginNickName.setAdapter(adapter);
 
         setStatusBarColor();
-        initInject();
         initClick();
         setRegisterTextColor();
     }
@@ -57,15 +53,6 @@ public class LoginActivity extends BaseActivity {
         binding.forgetPad.setOnClickListener(this);
         binding.registerMember.setOnClickListener(this);
         binding.findNickName.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .activityModule(new ActivityModule(this))
-                .applicationComponent(getApplicationComponent())
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     public static void startAction(Context context) {

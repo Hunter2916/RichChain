@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityRccanTradeBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class RCCanTradeActivity extends BaseActivity {
     ActivityRccanTradeBinding binding;
@@ -22,21 +19,11 @@ public class RCCanTradeActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         binding.titlebar.title.setText("可交易富链详情");
         setStatusBarColor();
-        initInject();
         initClick();
     }
 
     private void initClick() {
         binding.titlebar.back.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

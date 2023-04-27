@@ -11,9 +11,6 @@ import android.view.View;
 import com.maijia.rc.R;
 import com.maijia.rc.adapter.MainPagerAdapter;
 import com.maijia.rc.databinding.ActivityMineTeamBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 import com.maijia.rc.fragment.PromoteFragment;
 import com.maijia.rc.fragment.TeamFragment;
 
@@ -31,7 +28,6 @@ public class MineTeamActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         binding.titlebar.title.setText("团队推广");
         setStatusBarColor();
-        initInject();
         initClick();
 
         //初始化底部数据
@@ -55,15 +51,6 @@ public class MineTeamActivity extends BaseActivity {
         binding.llTeam.setOnClickListener(this);
         binding.llPromote.setOnClickListener(this);
 
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

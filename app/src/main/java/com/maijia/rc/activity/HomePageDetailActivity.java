@@ -10,9 +10,6 @@ import com.maijia.data.util.ToastUtil;
 import com.maijia.domain.model.HomePageData;
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityHomePageDetailBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class HomePageDetailActivity extends BaseActivity {
     private Context context;
@@ -28,7 +25,6 @@ public class HomePageDetailActivity extends BaseActivity {
         setStatusBarColor();
         data = (HomePageData) getIntent().getSerializableExtra("data");
         binding.titlebar.title.setText("资讯详情");
-        initInject();
         initClick();
         initView();
     }
@@ -39,15 +35,6 @@ public class HomePageDetailActivity extends BaseActivity {
 
     private void initClick() {
         binding.titlebar.back.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

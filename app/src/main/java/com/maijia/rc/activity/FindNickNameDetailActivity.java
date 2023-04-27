@@ -11,9 +11,6 @@ import com.maijia.domain.model.FindNickNameDetailData;
 import com.maijia.rc.R;
 import com.maijia.rc.adapter.FindNickNameDetailAdapter;
 import com.maijia.rc.databinding.ActivityFindNickNameDetailBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +30,6 @@ public class FindNickNameDetailActivity extends BaseActivity {
         binding.titlebar.title.setText("用户名");
 
         setStatusBarColor();
-        initInject();
         initClick();
         initView();
     }
@@ -57,15 +53,6 @@ public class FindNickNameDetailActivity extends BaseActivity {
         binding.titlebar.back.setOnClickListener(this);
         binding.toLogin.setOnClickListener(this);
 
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

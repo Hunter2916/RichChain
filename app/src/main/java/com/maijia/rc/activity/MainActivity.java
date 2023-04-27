@@ -13,9 +13,6 @@ import android.widget.RadioGroup;
 import com.maijia.rc.R;
 import com.maijia.rc.adapter.MainPagerAdapter;
 import com.maijia.rc.databinding.ActivityMainBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 import com.maijia.rc.fragment.HomePageFragment;
 import com.maijia.rc.fragment.MineCenterFragment;
 import com.maijia.rc.fragment.StoreCenterFragment;
@@ -38,7 +35,6 @@ public class MainActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         ActivityStack.getInstance().pushActivity(this);
         setStatusBarColor();
-        initInject();
         initClick();
         //初始化底部数据
         setButtonAdapter();
@@ -59,15 +55,6 @@ public class MainActivity extends BaseActivity {
         binding.viewPager.setAdapter(pagerAdapter);
         binding.viewPager.setNoScroll(true);
         binding.viewPager.setOffscreenPageLimit(3);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     /**

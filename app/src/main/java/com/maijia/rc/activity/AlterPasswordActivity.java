@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityAlterPasswordBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 public class AlterPasswordActivity extends BaseActivity {
     ActivityAlterPasswordBinding binding;
@@ -22,22 +19,12 @@ public class AlterPasswordActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         setStatusBarColor();
         binding.titlebar.title.setText("修改登录密码");
-        initInject();
         initClick();
     }
 
     private void initClick() {
 
         binding.titlebar.back.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

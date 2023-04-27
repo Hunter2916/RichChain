@@ -13,9 +13,6 @@ import android.view.View;
 import com.maijia.data.util.ToastUtil;
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityShareQrcodeBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 import com.maijia.rc.utils.QRCodeUtil;
 
 
@@ -31,7 +28,6 @@ public class ShareQRCodeActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         setStatusBarColor();
         binding.titlebar.title.setText("分享");
-        initInject();
         initClick();
         initQRCode();
     }
@@ -48,15 +44,6 @@ public class ShareQRCodeActivity extends BaseActivity {
     private void initClick() {
         binding.titlebar.back.setOnClickListener(this);
         binding.copy.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override

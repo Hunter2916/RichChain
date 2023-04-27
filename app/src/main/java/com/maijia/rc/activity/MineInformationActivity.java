@@ -10,9 +10,6 @@ import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.maijia.data.util.ToastUtil;
 import com.maijia.rc.R;
 import com.maijia.rc.databinding.ActivityMineInformationBinding;
-import com.maijia.rc.di.component.DaggerUserComponent;
-import com.maijia.rc.di.module.ActivityModule;
-import com.maijia.rc.di.module.UserModule;
 
 /**
  * 个人资料
@@ -30,7 +27,6 @@ public class MineInformationActivity extends BaseActivity {
         ActivityStack.getInstance().pushActivity(this);
         setStatusBarColor();
         binding.titlebar.title.setText("个人资料");
-        initInject();
         initClick();
         initView();
 
@@ -49,15 +45,6 @@ public class MineInformationActivity extends BaseActivity {
 
     private void initClick() {
         binding.titlebar.back.setOnClickListener(this);
-    }
-
-    private void initInject() {
-        DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
-                .userModule(new UserModule())
-                .build()
-                .inject(this);
     }
 
     @Override
